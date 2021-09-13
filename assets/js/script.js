@@ -23,19 +23,6 @@ function timeBlocks () {
     })
 };
 
-// saving the items even after the user refreshed the page. TRY IT 💜
-function persistentFunc () {
-    // target each of the hours on the time-blocks
-    $(".hour").each(function() {
-        var getEl = localStorage.getItem(hourEl);
-        var hourEl = $(this).text();
-        
-        if (getEl !== null) {
-            $(this).siblings(".description").val(getEl);
-        }
-    });
-}
-
 // saving the key/value pair of the classes for the hour and textarea triggered on click
 buttonEl.on('click', function() {
     var hourEl = $(this).siblings(".hour").text();
@@ -43,6 +30,19 @@ buttonEl.on('click', function() {
 
     localStorage.setItem(hourEl, textEl);
 });
+
+// saving the items even after the user refreshed the page. TRY IT 💜
+function persistentFunc () {
+    // target each of the hours on the time-blocks
+    $(".hour").each(function() {
+        var hourEl = $(this).text();
+        var getEl = localStorage.getItem(hourEl);
+
+        if (getEl !== null) {
+            $(this).siblings(".description").val(getEl);
+        }
+    });
+}
 
 // calling the functions to run 🏃🏽‍♂️
 timeBlocks();
