@@ -6,6 +6,8 @@
 
 ## Screenshot
 
+![mockup](assets/images/workMock.png)
+
 ## Website
 
 - https://kevin-hernandez-garza.github.io/workDay/
